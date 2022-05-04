@@ -11,11 +11,11 @@ const ConnectWallet: React.FC = () => {
     /**
      *  Connect! 🎉
      */
-    return <Button title="Connect" onPress={() => connector.connect()} />;
+    return (
+      <Button title="Connect wallet" onPress={() => connector.connect()} />
+    );
   }
-  return (
-    <Button title="Kill Session" onPress={() => connector.killSession()} />
-  );
+  return <Button title="Disconnect" onPress={() => connector.killSession()} />;
 };
 
 export default ConnectWallet;
