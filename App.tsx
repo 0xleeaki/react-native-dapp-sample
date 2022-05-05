@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import WalletConnectProvider from '@walletconnect/react-native-dapp';
 import React from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
@@ -15,7 +16,11 @@ const App: React.FC = () => {
       }}
       redirectUrl={Platform.OS === 'web' ? '' : 'yourappscheme://'}
       storageOptions={{
-        asyncStorage: undefined,
+        asyncStorage: {
+          store: '',
+          size: '',
+          getStore: '',
+        },
       }}>
       <View style={styles.container}>
         <Text style={styles.greeting}>ChaiSwap</Text>

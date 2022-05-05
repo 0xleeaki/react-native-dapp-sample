@@ -3,19 +3,21 @@ import * as React from 'react';
 import {Button} from 'react-native';
 
 const ConnectWallet: React.FC = () => {
-  const connector = useWalletConnect();
+  const {connected, killSession, connect} = useWalletConnect();
 
-  console.log('connector', connector);
+  const connectWallet = React.useCallback(async () => {
+    console.log('connect...');
+    // await createSession();
+    await connect();
+  }, [connect]);
 
-  if (!connector.connected) {
+  if (!connected) {
     /**
      *  Connect! 🎉
      */
-    return (
-      <Button title="Connect wallet" onPress={() => connector.connect()} />
-    );
+    return <Button title="Connect wallet" onPress={connectWallet} />;
   }
-  return <Button title="Disconnect" onPress={() => connector.killSession()} />;
+  return <Button title="Disconnect" onPress={() => killSession} />;
 };
 
 export default ConnectWallet;
