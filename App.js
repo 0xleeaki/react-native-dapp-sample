@@ -4,7 +4,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import ConnectWallet from './src/componnets/ConnectWallet/ConnectWallet';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <WalletConnectProvider
       storageOptions={{asyncStorage: AsyncStorage}}
