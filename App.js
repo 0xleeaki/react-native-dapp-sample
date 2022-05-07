@@ -10,7 +10,7 @@ const App = () => {
       storageOptions={{asyncStorage: AsyncStorage}}
       redirectUrl="myapp://">
       <View style={styles.container}>
-        <Text style={styles.greeting}>ReactNativeDapp</Text>
+        <Text style={styles.greeting}>React Native Dapp</Text>
         <View>
           <ConnectWallet />
         </View>
